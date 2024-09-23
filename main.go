@@ -66,64 +66,41 @@ func menuOperasiMatematika() {
 // Menampilkan menu operasi matematika
 func displayMathMenu() {
 	fmt.Println("\n--- Operasi Matematika ---")
-	fmt.Println("1. Penjumlahan")
-	fmt.Println("2. Pengurangan")
-	fmt.Println("3. Perkalian")
-	fmt.Println("4. Pembagian")
-	fmt.Println("5. Kembali ke menu utama")
-	fmt.Print("Pilih operasi (1-5): ")
-
-	var choice int
-	fmt.Scan(&choice)
-
-	if choice == 5 {
-		// Mengembalikan ke menu utama
-		return
-	}
-
 	// Meminta input angka dari pengguna
-	var num1, num2 float64
+	var num1, num2 int
 	fmt.Print("Masukkan angka pertama: ")
 	fmt.Scan(&num1)
 	fmt.Print("Masukkan angka kedua: ")
 	fmt.Scan(&num2)
 
 	// Menggunakan switch untuk memilih operasi
-	switch choice {
-	case 1:
-		fmt.Printf("Hasil penjumlahan: %.2f\n", penjumlahan(num1, num2))
-	case 2:
-		fmt.Printf("Hasil pengurangan: %.2f\n", pengurangan(num1, num2))
-	case 3:
-		fmt.Printf("Hasil perkalian: %.2f\n", perkalian(num1, num2))
-	case 4:
+		fmt.Printf("Hasil penjumlahan: %d\n", penjumlahan(num1, num2))
+		fmt.Printf("Hasil pengurangan: %d\n", pengurangan(num1, num2))
+		fmt.Printf("Hasil perkalian: %d\n", perkalian(num1, num2))
 		if num2 != 0 {
-			fmt.Printf("Hasil pembagian: %.2f\n", pembagian(num1, num2))
+			fmt.Printf("Hasil pembagian: %d\n", pembagian(num1, num2))
 		} else {
 			fmt.Println("Error: Tidak bisa membagi dengan nol!")
 		}
-	default:
-		fmt.Println("Operasi tidak valid, coba lagi.")
 	}
-}
 
 // Fungsi untuk penjumlahan
-func penjumlahan(a, b float64) float64 {
+func penjumlahan(a, b int) int {
 	return a + b
 }
 
 // Fungsi untuk pengurangan
-func pengurangan(a, b float64) float64 {
+func pengurangan(a, b int) int {
 	return a - b
 }
 
 // Fungsi untuk perkalian
-func perkalian(a, b float64) float64 {
+func perkalian(a, b int) int {
 	return a * b
 }
 
 // Fungsi untuk pembagian
-func pembagian(a, b float64) float64 {
+func pembagian(a, b int) int {
 	return a / b
 }
 
